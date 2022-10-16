@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+}
+
+body{
+    width: 300px;
+    height: auto;
+    background-color: #ffffff;
+    background-size: cover;
+}
+
+#flightbook form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+    
+}
+
+
+#flightbook form button {
+    width: 50%;
+    align-self: center;
+    margin-top: 5px;
+    color: white;
+    background-color: black;
+
+}
+
+#flight_info{
+    overflow:scroll;
+}
+
+#flight_info table{
+    width: 400px;
+}
+#flight_info table td{
+ padding: 2px;
+
+}
