@@ -44,6 +44,14 @@ option{
     margin: 1px;
 }
 
+#flightbook form img {
+    width: 32px;
+    align-self: center;
+}
+#flightbook form div {
+    height: 32px;
+    align-self: center;
+}
 #flightbook form button {
     border-radius: 5px;
     width: 50%;

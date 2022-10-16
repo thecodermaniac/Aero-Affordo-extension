@@ -1,5 +1,7 @@
 let jsondata = "";
 var to, from;
+const loader=document.querySelector("#flightbook form img")
+loader.style.display='none'
 const startoption = document.getElementById('start')
 const destinationoption = document.getElementById('destination')
 const srhbtn = document.getElementById('submit')
@@ -57,6 +59,7 @@ async function main() {
 
     srhbtn.addEventListener('click', async (e) => {
         e.preventDefault();
+        loader.style.display='block'
         const options = {
             method: 'GET',
             headers: {
@@ -70,6 +73,7 @@ async function main() {
         let flightdatajson = await response.json()
         flight_select.style.display = 'none'
         flight_info.style.display = 'flex'
+        loader.style.display='none'
 
         if (flightdatajson.data == null || Object.keys(flightdatajson.data).length === 0) {
             console.log('flight not available');
