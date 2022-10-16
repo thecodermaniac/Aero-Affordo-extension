@@ -69,7 +69,7 @@ async function main() {
         let response = await fetch(`https://travelpayouts-travelpayouts-flight-data-v1.p.rapidapi.com/v1/prices/cheap?origin=${from}&page=None&currency=INR&destination=${to}`, options)
         let flightdatajson = await response.json()
         flight_select.style.display = 'none'
-        flight_info.style.display = 'block'
+        flight_info.style.display = 'flex'
 
         if (flightdatajson.data == null || Object.keys(flightdatajson.data).length === 0) {
             console.log('flight not available');
@@ -85,7 +85,7 @@ async function main() {
             for (var i in flightarr) {
                 let onerow = document.createElement('tr')
 
-                onerow.innerHTML = `<td>${flightarr[i].price}</td> <td>${flightarr[i].flight_number}</td> <td>${timereturn(flightarr[i].departure_at)}</td> <td>${timereturn(flightarr[i].return_at)}</td>`
+                onerow.innerHTML = `<td>₹${flightarr[i].price}</td> <td>${flightarr[i].flight_number}</td> <td>${timereturn(flightarr[i].departure_at)}</td> <td>${timereturn(flightarr[i].return_at)}</td>`
                 // div.innerHTML = `Price:- ${flightarr[i].price} Departure: ${timereturn(flightarr[i].departure_at)} Return: ${timereturn(flightarr[i].return_at)} Number: ${flightarr[i].flight_number}`;
                 // flight_info.appendChild(div)
                 flight_table.appendChild(onerow)
